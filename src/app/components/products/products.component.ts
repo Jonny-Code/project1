@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import { RestService } from "src/app/services/rest.service";
+import { Component } from "@angular/core";
+import { ProductRepository } from "../../models/product.repository";
 import { Product } from "../../models/product.model";
 
 @Component({
@@ -7,26 +7,28 @@ import { Product } from "../../models/product.model";
   templateUrl: "./products.component.html",
   styleUrls: ["./products.component.css"]
 })
-export class ProductsComponent implements OnInit {
-  products: Product[] = [];
-  productsPerPage = 4;
-  selectedPage = 1;
-  constructor(private rest: RestService) {}
+export class ProductsComponent {
+  selectedCategory = null;
+  productsPerPage = 3;
+  constructor(private repo: ProductRepository) {}
 
-  ngOnInit() {
-    this.rest.getProducts().subscribe(
-      (prod: any) => {
-        this.products = prod;
-      },
-      err => {
-        console.log(err);
-        return false;
-      }
-    );
+  ngOnInit() {}
+
+  get products(): Product[] {
+    return this.repo
+      .getProducts(this.selectedCategory)
+      .slice(0, this.productsPerPage);
   }
 
-  getProducts = (): Product[] => {
-    let pageIndex = (this.selectedPage - 1) * this.productsPerPage;
-    return this.products.slice(pageIndex, pageIndex + this.productsPerPage);
+  get categories(): string[] {
+    return this.repo.getCategories();
+  }
+
+  changePageSize = (newSize: number) => {
+    this.productsPerPage = Number(newSize);
+  };
+
+  changeCategory = (newCategory?: string) => {
+    this.selectedCategory = newCategory;
   };
 }

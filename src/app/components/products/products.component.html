@@ -8,13 +8,23 @@
     <div class="container">
       <div class="row">
         <div class="col text-center">
-          <h4 class="d-inline pr-2"><small>Product display amount:</small></h4>
-          <div class="form-check form-check-inline">
+          <h4 class="pr-2"><small>Product display amount:</small></h4>
+          <div
+            class="form-check form-check-inline"
+            (change)="changePageSize($event.target.value)"
+          >
             <input
               class="form-check-input"
-              type="radio"
+              type="checkbox"
               id="exampleRadios1"
-              value="option1"
+              value="3"
+              (change)="
+                checkedAmount1 = true;
+                checkedAmount2 = false;
+                checkedAmount3 = false;
+                checkedAmount4 = false
+              "
+              [(ngModel)]="checkedAmount1"
             />
             <label class="form-check-label" for="exampleRadios1">
               3
@@ -22,9 +32,16 @@
             <div class="form-check">
               <input
                 class="form-check-input"
-                type="radio"
+                type="checkbox"
                 id="exampleRadios2"
-                value="option2"
+                value="5"
+                (change)="
+                  checkedAmount1 = false;
+                  checkedAmount2 = true;
+                  checkedAmount3 = false;
+                  checkedAmount4 = false
+                "
+                [(ngModel)]="checkedAmount2"
               />
               <label class="form-check-label" for="exampleRadios2">
                 5
@@ -33,12 +50,117 @@
             <div class="form-check">
               <input
                 class="form-check-input"
-                type="radio"
+                type="checkbox"
                 id="exampleRadios3"
-                value="option3"
+                value="10"
+                (change)="
+                  checkedAmount1 = false;
+                  checkedAmount2 = false;
+                  checkedAmount3 = true;
+                  checkedAmount4 = false
+                "
+                [(ngModel)]="checkedAmount3"
               />
               <label class="form-check-label" for="exampleRadios3">
                 10
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="exampleRadios4"
+                value="21"
+                (change)="
+                  checkedAmount1 = false;
+                  checkedAmount2 = false;
+                  checkedAmount3 = false;
+                  checkedAmount4 = true
+                "
+                [(ngModel)]="checkedAmount4"
+              />
+              <label class="form-check-label" for="exampleRadios3">
+                All
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="col text-center">
+          <h4 class="pr-2">
+            <small>Product display category:</small>
+          </h4>
+          <div
+            class="form-check form-check-inline"
+            (change)="changeCategory($event.target.value)"
+          >
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="exampleRadios1"
+              value="shrub"
+              (change)="
+                checkedCategory1 = true;
+                checkedCategory2 = false;
+                checkedCategory3 = false;
+                checkedCategory4 = false
+              "
+              [(ngModel)]="checkedCategory1"
+            />
+            <label class="form-check-label" for="exampleRadios1">
+              shrub
+            </label>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="exampleRadios2"
+                value="annual"
+                (change)="
+                  checkedCategory1 = false;
+                  checkedCategory2 = true;
+                  checkedCategory3 = false;
+                  checkedCategory4 = false
+                "
+                [(ngModel)]="checkedCategory2"
+              />
+              <label class="form-check-label" for="exampleRadios2">
+                annual
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="exampleRadios3"
+                value="perennial"
+                (change)="
+                  checkedCategory1 = false;
+                  checkedCategory2 = false;
+                  checkedCategory3 = true;
+                  checkedCategory4 = false
+                "
+                [(ngModel)]="checkedCategory3"
+              />
+              <label class="form-check-label" for="exampleRadios3">
+                perennial
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="exampleRadios4"
+                value="palm"
+                (change)="
+                  checkedCategory1 = false;
+                  checkedCategory2 = false;
+                  checkedCategory3 = false;
+                  checkedCategory4 = true
+                "
+                [(ngModel)]="checkedCategory4"
+              />
+              <label class="form-check-label" for="exampleRadios3">
+                palm
               </label>
             </div>
           </div>
@@ -47,10 +169,7 @@
     </div>
 
     <div class="row mt-3">
-      <div
-        class="col p-3 ml-2 mr-2 text-center"
-        *ngFor="let item of getProducts()"
-      >
+      <div class="col p-3 ml-2 mr-2 text-center" *ngFor="let item of products">
         <div class="card">
           <img
             src="../../../assets/{{ item.image }}.jpg"
@@ -72,9 +191,8 @@
 
             <h4 class="mt-2 mb-0 pb-0 pt-2 border-top">
               <span
-                ><small class="text-dark">Category:&nbsp;&nbsp;</small> ${{
-                  item.price
-                }}</span
+                ><small class="text-dark">Category:&nbsp;&nbsp;</small>
+                {{ item.category }}</span
               >
             </h4>
           </div>

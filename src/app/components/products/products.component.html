@@ -1,0 +1,90 @@
+<app-user-nav></app-user-nav>
+
+<div
+  style="background-color: rgb(245, 245, 245);"
+  class="container-fluid pt-4 pb-4"
+>
+  <div class="container">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <h4 class="d-inline pr-2"><small>Product display amount:</small></h4>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="exampleRadios1"
+              value="option1"
+            />
+            <label class="form-check-label" for="exampleRadios1">
+              3
+            </label>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                id="exampleRadios2"
+                value="option2"
+              />
+              <label class="form-check-label" for="exampleRadios2">
+                5
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                id="exampleRadios3"
+                value="option3"
+              />
+              <label class="form-check-label" for="exampleRadios3">
+                10
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div
+        class="col p-3 ml-2 mr-2 text-center"
+        *ngFor="let item of getProducts()"
+      >
+        <div class="card">
+          <img
+            src="../../../assets/{{ item.image }}.jpg"
+            class="card-img-top"
+            alt="Plant Image"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ item.name }}</h5>
+            <p class="card-text">
+              {{ item.description }}
+            </p>
+            <h4 class="text-success mt-2 pt-2 pb-2 border-top">
+              <span
+                ><small class="text-dark">Price:&nbsp;&nbsp;</small> ${{
+                  item.price
+                }}</span
+              >
+            </h4>
+
+            <h4 class="mt-2 mb-0 pb-0 pt-2 border-top">
+              <span
+                ><small class="text-dark">Category:&nbsp;&nbsp;</small> ${{
+                  item.price
+                }}</span
+              >
+            </h4>
+          </div>
+          <div class="d-flex card-body border-top text-center">
+            <h5 class="card-link text-primary mt-2">Buy</h5>
+
+            <h5 class="card-link text-primary mt-2">Add to cart</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

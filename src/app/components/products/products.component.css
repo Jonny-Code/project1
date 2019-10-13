@@ -1,0 +1,20 @@
+.card-link {
+  cursor: pointer;
+}
+
+.card-body {
+  justify-content: space-evenly;
+}
+
+.card-img-top {
+  max-width: 18rem;
+  max-height: 191px;
+}
+
+.card {
+  width: 18rem;
+}
+
+.col {
+  max-height: 527px;
+}

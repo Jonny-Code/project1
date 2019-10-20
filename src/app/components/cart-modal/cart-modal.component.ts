@@ -12,10 +12,10 @@ export class CartModalComponent {
   constructor() {}
 
   ngOnInit() {
+    console.log("opened");
     let arr = [];
     for (let i = 0; i < localStorage.length; i++) {
       const element = JSON.parse(localStorage.getItem(`${i + 1}`));
-      console.log(element);
       arr.push(element);
     }
     this.products = arr;

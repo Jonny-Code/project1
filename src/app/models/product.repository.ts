@@ -19,6 +19,11 @@ export class ProductRepository {
     );
   }
 
+  getAllProducts(): Product[] {
+    console.log(this.products);
+    return;
+  }
+
   getCategories(): string[] {
     return this.categories;
   }

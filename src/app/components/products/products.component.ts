@@ -31,4 +31,11 @@ export class ProductsComponent {
   changeCategory = (newCategory?: string) => {
     this.selectedCategory = newCategory;
   };
+
+  addToCart = (e: number) => {
+    let [prod] = this.repo.getProducts().filter(i => i.id == e);
+    if (localStorage.getItem(`${prod.id}`) == null) {
+      localStorage.setItem(`${prod.id}`, JSON.stringify(prod));
+    } else return;
+  };
 }

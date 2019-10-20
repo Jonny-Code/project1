@@ -10,6 +10,7 @@ import { UserNavComponent } from "./components/user-nav/user-nav.component";
 import { RestService } from "./services/rest.service";
 import { HttpClientModule } from "@angular/common/http";
 import { ProductRepository } from "./models/product.repository";
+import { CartModalComponent } from "./components/cart-modal/cart-modal.component";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ProductRepository } from "./models/product.repository";
     CheckoutComponent,
     HomeComponent,
     ProductsComponent,
-    UserNavComponent
+    UserNavComponent,
+    CartModalComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [RestService, ProductRepository],

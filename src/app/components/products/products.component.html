@@ -197,9 +197,12 @@
             </h4>
           </div>
           <div class="d-flex card-body border-top text-center">
-            <h5 class="card-link text-primary mt-2">Buy</h5>
-
-            <h5 class="card-link text-primary mt-2">Add to cart</h5>
+            <h5
+              class="card-link text-primary mt-2 p-3 border bg-light rounded"
+              (click)="addToCart(item.id)"
+            >
+              Add to cart
+            </h5>
           </div>
         </div>
       </div>

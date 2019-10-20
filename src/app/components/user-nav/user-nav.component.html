@@ -67,29 +67,6 @@
     <div class="col border pt-3 pb-3 pr-4 mr-3 bg-secondary shadow-sm">
       <h4 class="ml-4 mt-1 text-light">
         <span class="rounded pl-2 pr-2 pb-1 bg-dark">Customer Name</span>
-        <svg
-          version="1.1"
-          id="Capa_1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          x="0px"
-          y="0px"
-          width="30px"
-          height="20px"
-          viewBox="0 0 528.899 528.899"
-          style="float:right; cursor: pointer; enable-background:new 0 0 528.899 528.899;"
-          xml:space="preserve"
-        >
-          <g>
-            <path
-              style="fill: rgb(236, 235, 235)"
-              d="M328.883,89.125l107.59,107.589l-272.34,272.34L56.604,361.465L328.883,89.125z M518.113,
-                  63.177l-47.981-47.981c-18.543-18.543-48.653-18.543-67.259,0l-45.961,45.961l107.59,
-                  107.59l53.611-53.611C532.495,100.753,532.495,77.559,518.113,63.177z M0.3,512.69c-1.958,
-                  8.812,5.998,16.708,14.811,14.565l119.891-29.069L27.473,390.597L0.3,512.69z"
-            />
-          </g>
-        </svg>
       </h4>
       <span class="ml-4">
         <svg width="23" height="22">
@@ -121,13 +98,11 @@
       class="col-3 border pt-3 pb-2 wrapper bg-secondary shadow-sm text-center"
     >
       <h3 class="search-appearances">
-        <small class="text-light">Shopping Cart</small>
+        <small class="text-light pr-2">Shopping Cart</small>
         <span class="badge badge-dark text-right">3</span>
       </h3>
 
-      <button class="btn btn-dark border rounded pt-1 pb-1 pr-4 pl-4 mt-2">
-        <strong class="text-light">View Cart</strong>
-      </button>
+      <app-cart-modal></app-cart-modal>
     </div>
   </div>
 

@@ -98,18 +98,18 @@
       <h3 class="search-appearances">
         <small class="pr-2 text-white">Shopping Cart</small>
         <span
-          class="badge badge-dark text-right"
+          class="badge badge-success text-right"
           [textContent]="this.cart.length"
         ></span>
       </h3>
 
       <button
         type="button"
-        class="btn btn-dark border rounded pt-1 pb-1 pr-4 pl-4 mt-2"
+        class="btn btn-light border rounded pt-1 pb-1 pr-4 pl-4 mt-2"
         data-toggle="modal"
         data-target=".bd-example-modal-xl"
       >
-        <strong class="text-light" (click)="openCart()">View Cart</strong>
+        <strong (click)="openCart()">View Cart</strong>
       </button>
 
       <div
@@ -190,23 +190,23 @@
     </div>
   </div>
 
-  <div class="row bg-secondary mb-2">
+  <div class="row bg-secondary">
     <div class="col mt-2">
       <ul class="nav">
         <li
-          routerLinkActive="nav-item border-bottom border-light pb-3"
+          routerLinkActive="nav-item border-bottom border-success pb-3"
           [routerLinkActiveOptions]="{ exact: true }"
         >
           <a class="nav-link text-white" routerLink="/">Home</a>
         </li>
         <li
-          routerLinkActive="nav-item border-bottom border-primary pb-3"
+          routerLinkActive="nav-item border-bottom border-success pb-3"
           [routerLinkActiveOptions]="{ exact: true }"
         >
           <a class="nav-link text-white" routerLink="/products">Products</a>
         </li>
         <li
-          routerLinkActive="nav-item border-bottom border-primary pb-3"
+          routerLinkActive="nav-item border-bottom border-success pb-3"
           [routerLinkActiveOptions]="{ exact: true }"
         >
           <a class="nav-link text-white" routerLink="/checkout">Checkout</a>
@@ -217,7 +217,7 @@
 </div>
 
 <div class="container pt-4 pb-4 bg-dark">
-  <div class="row mt-3">
+  <div class="row">
     <div class="col mt-1 pt-3 pb-3 bg-white border shadow-sm">
       <h5 class="text-center">
         <strong>Home Page</strong>

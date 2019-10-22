@@ -18,3 +18,7 @@
 .col {
   max-height: 527px;
 }
+
+.nav li {
+  border-width: medium !important;
+}

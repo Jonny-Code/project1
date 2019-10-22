@@ -1,4 +1,4 @@
-<nav style="background-color: rgb(245, 245, 245);" class="row border-bottom">
+<nav class="row bg-dark">
   <div class="col-1 pl-3 pr-3 ml-2 pt-2 text-center">
     <svg
       version="1.1"
@@ -38,7 +38,7 @@
     </svg>
   </div>
   <div class="col p-0 mt-2 text-left">
-    <h5 class="text-secondary mt-1">
+    <h5 class="text-white mt-1">
       Wholesale Nursery
     </h5>
   </div>
@@ -62,11 +62,11 @@
     </div>
   </div>
 </nav>
-<div class="container pl-4">
+<div class="container">
   <div class="row mt-4">
-    <div class="col border pt-3 pb-3 pr-4 mr-3 bg-secondary shadow-sm">
+    <div class="col pt-3 pb-3 pr-4 mr-3 bg-dark shadow-sm">
       <h4 class="ml-4 mt-1 text-light">
-        <span class="rounded pl-2 pr-2 pb-1 bg-dark">Customer Name</span>
+        <span class="rounded pl-2 pr-2 pb-1 text-light">Customer Name</span>
       </h4>
       <span class="ml-4">
         <svg width="23" height="22">
@@ -75,7 +75,7 @@
             stroke-width=".001"
             id="svg_1"
             d="m5.866927,13.31483l13.520964,0.005012l-0.438758,0.629624l-12.638267,-0.015036l-0.443939,-0.6196l0.000001,0zm0.092918,-8.375422l13.340291,-0.015036l0.38715,0.645898l-14.119759,0.005012l0.392318,-0.635874zm-1.316524,4.196811l15.963007,-0.015036l-0.020634,0.645898l-15.932049,-0.010024l-0.010324,-0.620838zm15.976222,0.059907c0,4.275997 -3.583338,7.754565 -7.988579,7.754565c-4.403338,0 -7.986008,-3.479196 -7.986008,-7.754565c0,-4.275389 3.583318,-7.753956 7.986008,-7.753956c4.405242,-0.000628 7.988579,3.478567 7.988579,7.753956zm-7.987952,-8.375422c-4.754837,0 -8.624131,3.756863 -8.624131,8.374792c0,4.618559 3.869295,8.375421 8.624131,8.375421c4.757426,0 8.626074,-3.756862 8.626074,-8.375421c0,-4.61793 -3.868648,-8.374792 -8.626074,-8.374792zm2.420173,8.375422c0,4.569259 -1.274992,7.754565 -2.420173,7.754565c-1.143886,0 -2.418857,-3.185306 -2.418857,-7.754565c0,-4.570517 1.274343,-7.753956 2.418857,-7.753956c1.144535,-0.000628 2.420173,3.183439 2.420173,7.753956zm-2.420173,-8.375422c-1.986362,0 -3.058275,4.3153 -3.058275,8.374792c0,4.060731 1.071913,8.375421 3.058275,8.375421c1.986382,0 3.060238,-4.315317 3.060238,-8.375421c-0.000648,-4.059492 -1.073856,-8.374792 -3.060238,-8.374792zm5.668034,8.375422c0,4.275997 -2.543549,7.754565 -5.668034,7.754565c-3.123836,0 -5.666091,-3.479196 -5.666091,-7.754565c0,-4.275389 2.542255,-7.753956 5.666091,-7.753956c3.124485,-0.000628 5.668034,3.478567 5.668034,7.753956zm-5.668034,-8.375422c-3.476003,0 -6.305508,3.756863 -6.305508,8.374792c0,4.618559 2.829506,8.375421 6.305508,8.375421c3.477298,0 6.306175,-3.756862 6.306175,-8.375421c0,-4.61793 -2.828878,-8.374792 -6.306175,-8.374792z"
-            fill="rgb(235,235,235)"
+            fill="#9E9E9E"
           />
         </svg>
         <small class="heading ml-2 text-light">Company Name</small>
@@ -88,30 +88,28 @@
             d="m13.696636,3.130007c-4.694267,0 -8.5,2.621287 -8.5,5.854572c0,3.234066 8.5,14.145428 8.5,14.145428s8.5,-10.911362 8.5,-14.145428c0,-3.233285 -3.8046,-5.854572 -8.5,-5.854572zm0,8.652278c-2.242867,0 -4.061867,-1.252098 -4.061867,-2.797705s1.819,-2.797705 4.061867,-2.797705s4.061867,1.252879 4.061867,2.797705s-1.819,2.797705 -4.061867,2.797705z"
             stroke-width="0"
             stroke="#7f7f7f"
-            fill="#cecece"
+            fill="#9E9E9E"
           />
         </svg>
         <small class="heading ml-2 text-light">Location</small>
       </span>
     </div>
-    <div
-      class="col-3 border pt-3 pb-2 wrapper bg-secondary shadow-sm text-center"
-    >
+    <div class="col-3 pt-3 pb-2 wrapper bg-dark shadow-sm text-center">
       <h3 class="search-appearances">
-        <small class="text-light pr-2">Shopping Cart</small>
+        <small class="pr-2 text-white">Shopping Cart</small>
         <span
-          class="badge badge-dark text-right"
+          class="badge badge-success text-right"
           [textContent]="this.cart.length"
         ></span>
       </h3>
 
       <button
         type="button"
-        class="btn btn-dark border rounded pt-1 pb-1 pr-4 pl-4 mt-2"
+        class="btn btn-light border rounded pt-1 pb-1 pr-4 pl-4 mt-2"
         data-toggle="modal"
         data-target=".bd-example-modal-xl"
       >
-        <strong class="text-light" (click)="openCart()">View Cart</strong>
+        <strong (click)="openCart()">View Cart</strong>
       </button>
 
       <div
@@ -151,10 +149,10 @@
             <div class="container bg-secondary">
               <div class="row pt-2">
                 <div
-                  class="col p-3 ml-2 mr-2 text-center d-flex justify-content-center"
+                  class="col p-3 m-2 text-center d-flex justify-content-center"
                   *ngFor="let item of cart"
                 >
-                  <div class="card shadow-lg p-3 bg-light">
+                  <div class="card shadow-lg p-3">
                     <div class="card-body">
                       <h5 class="card-title">{{ item.name }}</h5>
                       <p class="card-text">
@@ -162,14 +160,14 @@
                       </p>
                       <h4 class="text-success mt-2 pt-2 pb-2 border-top">
                         <span
-                          ><small class="text-dark">Price:&nbsp;&nbsp;</small>
+                          ><small class="text-white">Price:&nbsp;&nbsp;</small>
                           ${{ item.price }}</span
                         >
                       </h4>
 
                       <h4 class="mt-2 mb-0 pb-0 pt-2 border-top">
                         <span
-                          ><small class="text-dark"
+                          ><small class="text-white"
                             >Category:&nbsp;&nbsp;</small
                           >
                           {{ item.category }}</span
@@ -192,232 +190,226 @@
     </div>
   </div>
 
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col mt-2">
-        <ul class="nav">
-          <li
-            routerLinkActive="nav-item border-bottom border-primary pb-3"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            <a class="nav-link text-dark" routerLink="/">Home</a>
-          </li>
-          <li
-            routerLinkActive="nav-item border-bottom border-primary pb-3"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            <a class="nav-link text-secondary" routerLink="/products"
-              >Products</a
-            >
-          </li>
-          <li
-            routerLinkActive="nav-item border-bottom border-primary pb-3"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            <a class="nav-link text-secondary" routerLink="/checkout"
-              >Checkout</a
-            >
-          </li>
-        </ul>
-      </div>
+  <div class="row bg-secondary">
+    <div class="col mt-2">
+      <ul class="nav">
+        <li
+          routerLinkActive="nav-item border-bottom border-success pb-3"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a class="nav-link text-white" routerLink="/">Home</a>
+        </li>
+        <li
+          routerLinkActive="nav-item border-bottom border-success pb-3"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a class="nav-link text-white" routerLink="/products">Products</a>
+        </li>
+        <li
+          routerLinkActive="nav-item border-bottom border-success pb-3"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a class="nav-link text-white" routerLink="/checkout">Checkout</a>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
 
-<div
-  style="background-color: rgb(245, 245, 245);"
-  class="container-fluid pt-4 pb-4"
->
+<div class="container-fluid pb-4 bg-secondary">
   <div class="container">
-    <div class="container">
-      <div class="row">
-        <div class="col text-center">
-          <h4 class="pr-2"><small>Product display amount:</small></h4>
-          <div
-            class="form-check form-check-inline"
-            (change)="changePageSize($event.target.value)"
-          >
+    <div class="row bg-dark">
+      <div class="col text-center">
+        <h4 class="pr-2">
+          <small class="text-white">Product display amount:</small>
+        </h4>
+        <div
+          class="form-check form-check-inline"
+          (change)="changePageSize($event.target.value)"
+        >
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="exampleRadios1"
+            value="3"
+            (change)="
+              checkedAmount1 = true;
+              checkedAmount2 = false;
+              checkedAmount3 = false;
+              checkedAmount4 = false
+            "
+            [(ngModel)]="checkedAmount1"
+          />
+          <label class="form-check-label text-light" for="exampleRadios1">
+            3
+          </label>
+          <div class="form-check">
             <input
               class="form-check-input"
               type="checkbox"
-              id="exampleRadios1"
-              value="3"
+              id="exampleRadios2"
+              value="5"
               (change)="
-                checkedAmount1 = true;
-                checkedAmount2 = false;
+                checkedAmount1 = false;
+                checkedAmount2 = true;
                 checkedAmount3 = false;
                 checkedAmount4 = false
               "
-              [(ngModel)]="checkedAmount1"
+              [(ngModel)]="checkedAmount2"
             />
-            <label class="form-check-label" for="exampleRadios1">
-              3
+            <label class="form-check-label text-light" for="exampleRadios2">
+              5
             </label>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="exampleRadios2"
-                value="5"
-                (change)="
-                  checkedAmount1 = false;
-                  checkedAmount2 = true;
-                  checkedAmount3 = false;
-                  checkedAmount4 = false
-                "
-                [(ngModel)]="checkedAmount2"
-              />
-              <label class="form-check-label" for="exampleRadios2">
-                5
-              </label>
-            </div>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="exampleRadios3"
-                value="10"
-                (change)="
-                  checkedAmount1 = false;
-                  checkedAmount2 = false;
-                  checkedAmount3 = true;
-                  checkedAmount4 = false
-                "
-                [(ngModel)]="checkedAmount3"
-              />
-              <label class="form-check-label" for="exampleRadios3">
-                10
-              </label>
-            </div>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="exampleRadios4"
-                value="21"
-                (change)="
-                  checkedAmount1 = false;
-                  checkedAmount2 = false;
-                  checkedAmount3 = false;
-                  checkedAmount4 = true
-                "
-                [(ngModel)]="checkedAmount4"
-              />
-              <label class="form-check-label" for="exampleRadios3">
-                All
-              </label>
-            </div>
           </div>
-        </div>
-        <div class="col text-center">
-          <h4 class="pr-2">
-            <small>Product display category:</small>
-          </h4>
-          <div
-            class="form-check form-check-inline"
-            (change)="changeCategory($event.target.value)"
-          >
+          <div class="form-check">
             <input
               class="form-check-input"
               type="checkbox"
-              id="exampleRadios1"
-              value="shrub"
+              id="exampleRadios3"
+              value="10"
               (change)="
-                checkedCategory1 = true;
-                checkedCategory2 = false;
+                checkedAmount1 = false;
+                checkedAmount2 = false;
+                checkedAmount3 = true;
+                checkedAmount4 = false
+              "
+              [(ngModel)]="checkedAmount3"
+            />
+            <label class="form-check-label text-light" for="exampleRadios3">
+              10
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="exampleRadios4"
+              value="21"
+              (change)="
+                checkedAmount1 = false;
+                checkedAmount2 = false;
+                checkedAmount3 = false;
+                checkedAmount4 = true
+              "
+              [(ngModel)]="checkedAmount4"
+            />
+            <label class="form-check-label text-light" for="exampleRadios3">
+              All
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="col text-center">
+        <h4 class="pr-2">
+          <small class="text-white">Product display category:</small>
+        </h4>
+        <div
+          class="form-check form-check-inline"
+          (change)="changeCategory($event.target.value)"
+        >
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="exampleRadios1"
+            value="shrub"
+            (change)="
+              checkedCategory1 = true;
+              checkedCategory2 = false;
+              checkedCategory3 = false;
+              checkedCategory4 = false;
+              checkedCategory5 = false
+            "
+            [(ngModel)]="checkedCategory1"
+          />
+          <label class="form-check-label text-light" for="exampleRadios1">
+            shrub
+          </label>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="exampleRadios2"
+              value="annual"
+              (change)="
+                checkedCategory1 = false;
+                checkedCategory2 = true;
                 checkedCategory3 = false;
                 checkedCategory4 = false;
                 checkedCategory5 = false
               "
-              [(ngModel)]="checkedCategory1"
+              [(ngModel)]="checkedCategory2"
             />
-            <label class="form-check-label" for="exampleRadios1">
-              shrub
+            <label class="form-check-label text-light" for="exampleRadios2">
+              annual
             </label>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="exampleRadios2"
-                value="annual"
-                (change)="
-                  checkedCategory1 = false;
-                  checkedCategory2 = true;
-                  checkedCategory3 = false;
-                  checkedCategory4 = false;
-                  checkedCategory5 = false
-                "
-                [(ngModel)]="checkedCategory2"
-              />
-              <label class="form-check-label" for="exampleRadios2">
-                annual
-              </label>
-            </div>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="exampleRadios3"
-                value="perennial"
-                (change)="
-                  checkedCategory1 = false;
-                  checkedCategory2 = false;
-                  checkedCategory3 = true;
-                  checkedCategory4 = false;
-                  checkedCategory5 = false
-                "
-                [(ngModel)]="checkedCategory3"
-              />
-              <label class="form-check-label" for="exampleRadios3">
-                perennial
-              </label>
-            </div>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="exampleRadios4"
-                value="palm"
-                (change)="
-                  checkedCategory1 = false;
-                  checkedCategory2 = false;
-                  checkedCategory3 = false;
-                  checkedCategory4 = true;
-                  checkedCategory5 = false
-                "
-                [(ngModel)]="checkedCategory4"
-              />
-              <label class="form-check-label" for="exampleRadios4">
-                palm
-              </label>
-            </div>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="exampleRadios3"
+              value="perennial"
+              (change)="
+                checkedCategory1 = false;
+                checkedCategory2 = false;
+                checkedCategory3 = true;
+                checkedCategory4 = false;
+                checkedCategory5 = false
+              "
+              [(ngModel)]="checkedCategory3"
+            />
+            <label class="form-check-label text-light" for="exampleRadios3">
+              perennial
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="exampleRadios4"
+              value="palm"
+              (change)="
+                checkedCategory1 = false;
+                checkedCategory2 = false;
+                checkedCategory3 = false;
+                checkedCategory4 = true;
+                checkedCategory5 = false
+              "
+              [(ngModel)]="checkedCategory4"
+            />
+            <label class="form-check-label text-light" for="exampleRadios4">
+              palm
+            </label>
+          </div>
 
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="exampleRadios5"
-                value="null"
-                (change)="
-                  checkedCategory1 = false;
-                  checkedCategory2 = false;
-                  checkedCategory3 = false;
-                  checkedCategory4 = false;
-                  checkedCategory5 = true
-                "
-                [(ngModel)]="checkedCategory5"
-              />
-              <label class="form-check-label" for="exampleRadios5">
-                All
-              </label>
-            </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="exampleRadios5"
+              value="null"
+              (change)="
+                checkedCategory1 = false;
+                checkedCategory2 = false;
+                checkedCategory3 = false;
+                checkedCategory4 = false;
+                checkedCategory5 = true
+              "
+              [(ngModel)]="checkedCategory5"
+            />
+            <label class="form-check-label text-light" for="exampleRadios5">
+              All
+            </label>
           </div>
         </div>
       </div>
     </div>
 
     <div class="row mt-3">
-      <div class="col p-3 ml-2 mr-2 text-center" *ngFor="let item of products">
+      <div
+        class="col p-3 ml-2 mr-2 mb-3 text-center"
+        *ngFor="let item of products"
+      >
         <div class="card">
           <img
             src="../../../assets/{{ item.image }}.jpg"
@@ -425,13 +417,13 @@
             alt="Plant Image"
           />
           <div class="card-body">
-            <h5 class="card-title">{{ item.name }}</h5>
-            <p class="card-text">
+            <h5 class="card-title text-light">{{ item.name }}</h5>
+            <p class="card-text text-light">
               {{ item.description }}
             </p>
             <h4 class="text-success mt-2 pt-2 pb-2 border-top">
               <span
-                ><small class="text-dark">Price:&nbsp;&nbsp;</small> ${{
+                ><small class="text-white">Price:&nbsp;&nbsp;</small> ${{
                   item.price
                 }}</span
               >
@@ -439,7 +431,7 @@
 
             <h4 class="mt-2 mb-0 pb-0 pt-2 border-top">
               <span
-                ><small class="text-dark">Category:&nbsp;&nbsp;</small>
+                ><small class="text-white">Category:&nbsp;&nbsp;</small>
                 {{ item.category }}</span
               >
             </h4>

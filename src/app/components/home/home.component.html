@@ -1,4 +1,4 @@
-<nav style="background-color: rgb(245, 245, 245);" class="row border-bottom">
+<nav class="row bg-dark">
   <div class="col-1 pl-3 pr-3 ml-2 pt-2 text-center">
     <svg
       version="1.1"
@@ -38,7 +38,7 @@
     </svg>
   </div>
   <div class="col p-0 mt-2 text-left">
-    <h5 class="text-secondary mt-1">
+    <h5 class="text-white mt-1">
       Wholesale Nursery
     </h5>
   </div>
@@ -62,11 +62,11 @@
     </div>
   </div>
 </nav>
-<div class="container pl-4">
+<div class="container">
   <div class="row mt-4">
-    <div class="col border pt-3 pb-3 pr-4 mr-3 bg-secondary shadow-sm">
+    <div class="col pt-3 pb-3 pr-4 mr-3 bg-dark shadow-sm">
       <h4 class="ml-4 mt-1 text-light">
-        <span class="rounded pl-2 pr-2 pb-1 bg-dark">Customer Name</span>
+        <span class="rounded pl-2 pr-2 pb-1 text-light">Customer Name</span>
       </h4>
       <span class="ml-4">
         <svg width="23" height="22">
@@ -75,7 +75,7 @@
             stroke-width=".001"
             id="svg_1"
             d="m5.866927,13.31483l13.520964,0.005012l-0.438758,0.629624l-12.638267,-0.015036l-0.443939,-0.6196l0.000001,0zm0.092918,-8.375422l13.340291,-0.015036l0.38715,0.645898l-14.119759,0.005012l0.392318,-0.635874zm-1.316524,4.196811l15.963007,-0.015036l-0.020634,0.645898l-15.932049,-0.010024l-0.010324,-0.620838zm15.976222,0.059907c0,4.275997 -3.583338,7.754565 -7.988579,7.754565c-4.403338,0 -7.986008,-3.479196 -7.986008,-7.754565c0,-4.275389 3.583318,-7.753956 7.986008,-7.753956c4.405242,-0.000628 7.988579,3.478567 7.988579,7.753956zm-7.987952,-8.375422c-4.754837,0 -8.624131,3.756863 -8.624131,8.374792c0,4.618559 3.869295,8.375421 8.624131,8.375421c4.757426,0 8.626074,-3.756862 8.626074,-8.375421c0,-4.61793 -3.868648,-8.374792 -8.626074,-8.374792zm2.420173,8.375422c0,4.569259 -1.274992,7.754565 -2.420173,7.754565c-1.143886,0 -2.418857,-3.185306 -2.418857,-7.754565c0,-4.570517 1.274343,-7.753956 2.418857,-7.753956c1.144535,-0.000628 2.420173,3.183439 2.420173,7.753956zm-2.420173,-8.375422c-1.986362,0 -3.058275,4.3153 -3.058275,8.374792c0,4.060731 1.071913,8.375421 3.058275,8.375421c1.986382,0 3.060238,-4.315317 3.060238,-8.375421c-0.000648,-4.059492 -1.073856,-8.374792 -3.060238,-8.374792zm5.668034,8.375422c0,4.275997 -2.543549,7.754565 -5.668034,7.754565c-3.123836,0 -5.666091,-3.479196 -5.666091,-7.754565c0,-4.275389 2.542255,-7.753956 5.666091,-7.753956c3.124485,-0.000628 5.668034,3.478567 5.668034,7.753956zm-5.668034,-8.375422c-3.476003,0 -6.305508,3.756863 -6.305508,8.374792c0,4.618559 2.829506,8.375421 6.305508,8.375421c3.477298,0 6.306175,-3.756862 6.306175,-8.375421c0,-4.61793 -2.828878,-8.374792 -6.306175,-8.374792z"
-            fill="rgb(235,235,235)"
+            fill="#9E9E9E"
           />
         </svg>
         <small class="heading ml-2 text-light">Company Name</small>
@@ -88,17 +88,15 @@
             d="m13.696636,3.130007c-4.694267,0 -8.5,2.621287 -8.5,5.854572c0,3.234066 8.5,14.145428 8.5,14.145428s8.5,-10.911362 8.5,-14.145428c0,-3.233285 -3.8046,-5.854572 -8.5,-5.854572zm0,8.652278c-2.242867,0 -4.061867,-1.252098 -4.061867,-2.797705s1.819,-2.797705 4.061867,-2.797705s4.061867,1.252879 4.061867,2.797705s-1.819,2.797705 -4.061867,2.797705z"
             stroke-width="0"
             stroke="#7f7f7f"
-            fill="#cecece"
+            fill="#9E9E9E"
           />
         </svg>
         <small class="heading ml-2 text-light">Location</small>
       </span>
     </div>
-    <div
-      class="col-3 border pt-3 pb-2 wrapper bg-secondary shadow-sm text-center"
-    >
+    <div class="col-3 pt-3 pb-2 wrapper bg-dark shadow-sm text-center">
       <h3 class="search-appearances">
-        <small class="text-light pr-2">Shopping Cart</small>
+        <small class="pr-2 text-white">Shopping Cart</small>
         <span
           class="badge badge-dark text-right"
           [textContent]="this.cart.length"
@@ -123,42 +121,64 @@
       >
         <div class="modal-dialog modal-xl">
           <div class="modal-content ml-2 mr-2">
-            <div
-              class="display-4 text-center p-3 ml-5 mr-5 mb-3 border-bottom-4"
-            >
-              Shopping Cart
+            <div class="container bg-secondary">
+              <div
+                class="display-4 text-center p-3 ml-5 mr-5 mb-2 border-bottom text-light"
+              >
+                Shopping Cart
+              </div>
+              <p class="lead text-light">Cart Display Amount</p>
+              <div class="row justify-content-center">
+                <div class="col-1 text-center d-flex justify-content-center">
+                  <div class="form-group">
+                    <select
+                      class="form-control"
+                      (change)="changeCartSize($event.target.value)"
+                    >
+                      <option
+                        *ngFor="let item of getSelectOptions(); index as i"
+                        [value]="i + 1"
+                        >{{ i + 1 }}</option
+                      >
+                    </select>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div class="row mt-3">
-              <div
-                class="col p-3 ml-2 mr-2 text-center d-flex justify-content-center"
-                *ngFor="let item of cart"
-              >
-                <div class="card shadow-lg p-3">
-                  <div class="card-body">
-                    <h5 class="card-title">{{ item.name }}</h5>
-                    <p class="card-text">
-                      {{ item.description }}
-                    </p>
-                    <h4 class="text-success mt-2 pt-2 pb-2 border-top">
-                      <span
-                        ><small class="text-dark">Price:&nbsp;&nbsp;</small> ${{
-                          item.price
-                        }}</span
-                      >
-                    </h4>
+            <div class="container bg-secondary">
+              <div class="row pt-2">
+                <div
+                  class="col p-3 ml-2 mr-2 text-center d-flex justify-content-center"
+                  *ngFor="let item of cart"
+                >
+                  <div class="card shadow-lg p-3 bg-light">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ item.name }}</h5>
+                      <p class="card-text">
+                        {{ item.description }}
+                      </p>
+                      <h4 class="text-success mt-2 pt-2 pb-2 border-top">
+                        <span
+                          ><small class="text-dark">Price:&nbsp;&nbsp;</small>
+                          ${{ item.price }}</span
+                        >
+                      </h4>
 
-                    <h4 class="mt-2 mb-0 pb-0 pt-2 border-top">
-                      <span
-                        ><small class="text-dark">Category:&nbsp;&nbsp;</small>
-                        {{ item.category }}</span
+                      <h4 class="mt-2 mb-0 pb-0 pt-2 border-top">
+                        <span
+                          ><small class="text-dark"
+                            >Category:&nbsp;&nbsp;</small
+                          >
+                          {{ item.category }}</span
+                        >
+                      </h4>
+                      <div
+                        class="btn btn-danger btn-block mt-3"
+                        (click)="removeCartItem(item.id)"
                       >
-                    </h4>
-                    <div
-                      class="btn btn-danger btn-block mt-3"
-                      (click)="removeCartItem(item.id)"
-                    >
-                      Remove
+                        Remove
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -170,54 +190,43 @@
     </div>
   </div>
 
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col mt-2">
-        <ul class="nav">
-          <li
-            routerLinkActive="nav-item border-bottom border-primary pb-3"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            <a class="nav-link text-dark" routerLink="/">Home</a>
-          </li>
-          <li
-            routerLinkActive="nav-item border-bottom border-primary pb-3"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            <a class="nav-link text-secondary" routerLink="/products"
-              >Products</a
-            >
-          </li>
-          <li
-            routerLinkActive="nav-item border-bottom border-primary pb-3"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            <a class="nav-link text-secondary" routerLink="/checkout"
-              >Checkout</a
-            >
-          </li>
-        </ul>
-      </div>
+  <div class="row bg-secondary mb-2">
+    <div class="col mt-2">
+      <ul class="nav">
+        <li
+          routerLinkActive="nav-item border-bottom border-light pb-3"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a class="nav-link text-white" routerLink="/">Home</a>
+        </li>
+        <li
+          routerLinkActive="nav-item border-bottom border-primary pb-3"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a class="nav-link text-white" routerLink="/products">Products</a>
+        </li>
+        <li
+          routerLinkActive="nav-item border-bottom border-primary pb-3"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a class="nav-link text-white" routerLink="/checkout">Checkout</a>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
 
-<div
-  style="background-color: rgb(245, 245, 245);"
-  class="container-fluid pt-4 pb-4"
->
-  <div class="container pr-4">
-    <div class="row pl-2 mt-3">
-      <div class="col mt-1 pt-3 pb-3 pr-3 bg-white border shadow-sm">
-        <h5 class="text-center">
-          <strong>Home Page</strong>
-        </h5>
-        <p class="pt-3">
-          Vim hendrerit contentiones ex, no timeam euripidis mel, habemus
-          propriae volutpat sea an. Vel diceret contentiones ut, vel ipsum nobis
-          in. Sea in esse iusto, novum audire complectitur id vix.
-        </p>
-      </div>
+<div class="container pt-4 pb-4 bg-dark">
+  <div class="row mt-3">
+    <div class="col mt-1 pt-3 pb-3 bg-white border shadow-sm">
+      <h5 class="text-center">
+        <strong>Home Page</strong>
+      </h5>
+      <p class="pt-3">
+        Vim hendrerit contentiones ex, no timeam euripidis mel, habemus propriae
+        volutpat sea an. Vel diceret contentiones ut, vel ipsum nobis in. Sea in
+        esse iusto, novum audire complectitur id vix.
+      </p>
     </div>
   </div>
 </div>

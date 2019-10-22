@@ -11,6 +11,7 @@ export class ProductsComponent {
   cartProducts: Product[];
   selectedCategory = null;
   productsPerPage = 3;
+  cartProdsPerPage = localStorage.length;
   constructor(private repo: ProductRepository) {}
 
   ngOnInit() {
@@ -23,6 +24,7 @@ export class ProductsComponent {
       }
     }
     this.cartProducts = arr;
+    this.cartProdsPerPage = arr.length;
   }
 
   get products(): Product[] {
@@ -36,11 +38,20 @@ export class ProductsComponent {
   }
 
   get cart(): Product[] {
-    return this.cartProducts;
+    return this.cartProducts.slice(0, this.cartProdsPerPage);
   }
+
+  getSelectOptions = (): Array<any> => {
+    return new Array(localStorage.length);
+  };
 
   changePageSize = (newSize: number) => {
     this.productsPerPage = Number(newSize);
+  };
+
+  changeCartSize = (newSize: number) => {
+    this.cartProdsPerPage = newSize;
+    console.log(newSize);
   };
 
   changeCategory = (newCategory?: string) => {

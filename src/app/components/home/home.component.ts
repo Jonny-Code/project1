@@ -8,6 +8,7 @@ import { Product } from "../../models/product.model";
 })
 export class HomeComponent implements OnInit {
   cartProducts: Product[];
+  cartProdsPerPage = localStorage.length;
 
   constructor() {}
 
@@ -24,8 +25,17 @@ export class HomeComponent implements OnInit {
   }
 
   get cart(): Product[] {
-    return this.cartProducts;
+    return this.cartProducts.slice(0, this.cartProdsPerPage);
   }
+
+  getSelectOptions = (): Array<any> => {
+    return new Array(localStorage.length);
+  };
+
+  changeCartSize = (newSize: number) => {
+    this.cartProdsPerPage = newSize;
+    console.log(newSize);
+  };
 
   removeCartItem = (e: number) => {
     console.log(e);

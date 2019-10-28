@@ -5,3 +5,8 @@
 form label {
   color: white;
 }
+
+img {
+  max-width: 150px;
+  max-height: 120px;
+}

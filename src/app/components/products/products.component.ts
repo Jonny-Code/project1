@@ -23,6 +23,7 @@ export class ProductsComponent {
         arr.push(JSON.parse(element));
       }
     }
+    console.log(arr);
     this.cartProducts = arr;
     this.cartProdsPerPage = arr.length;
   }
@@ -51,7 +52,6 @@ export class ProductsComponent {
 
   changeCartSize = (newSize: number) => {
     this.cartProdsPerPage = newSize;
-    console.log(newSize);
   };
 
   changeCategory = (newCategory?: string) => {
@@ -62,6 +62,7 @@ export class ProductsComponent {
 
   addToCart = (e: number) => {
     let [prod] = this.repo.getProducts().filter(i => i.id == e);
+    prod.inCart = true;
     if (localStorage.getItem(`${prod.id}`) == null) {
       localStorage.setItem(`${prod.id}`, JSON.stringify(prod));
     } else return;
@@ -81,6 +82,9 @@ export class ProductsComponent {
   removeCartItem = (e: number) => {
     console.log(e);
     localStorage.removeItem(`${e}`);
+    this.products.forEach(prod => {
+      if (e == prod.id) prod.inCart = false;
+    });
     this.ngOnInit();
   };
 }

@@ -7,7 +7,8 @@ module.exports = function() {
         image: "clusia",
         category: "shrub",
         price: 27,
-        description: "this is just a placeholder descripion for each product"
+        description: "this is just a placeholder descripion for each product",
+        inCart: false
       },
       {
         id: 2,
@@ -15,7 +16,8 @@ module.exports = function() {
         image: "birdofparadise",
         category: "shrub",
         price: 48,
-        description: "this is just a placeholder descripion for each product"
+        description: "this is just a placeholder descripion for each product",
+        inCart: false
       },
       {
         id: 3,
@@ -23,7 +25,8 @@ module.exports = function() {
         image: "dhalia",
         category: "perennial",
         price: 19.5,
-        description: "this is just a placeholder descripion for each product"
+        description: "this is just a placeholder descripion for each product",
+        inCart: false
       },
       {
         id: 4,
@@ -31,7 +34,8 @@ module.exports = function() {
         image: "gulmohur",
         category: "perennial",
         price: 34.95,
-        description: "this is just a placeholder descripion for each product"
+        description: "this is just a placeholder descripion for each product",
+        inCart: false
       },
       {
         id: 5,
@@ -39,7 +43,8 @@ module.exports = function() {
         image: "hibiscus",
         category: "perennial",
         price: 32,
-        description: "this is just a placeholder descripion for each product"
+        description: "this is just a placeholder descripion for each product",
+        inCart: false
       },
       {
         id: 6,
@@ -47,7 +52,8 @@ module.exports = function() {
         image: "kniphofia",
         category: "perennial",
         price: 16,
-        description: "this is just a placeholder descripion for each product"
+        description: "this is just a placeholder descripion for each product",
+        inCart: false
       },
       {
         id: 7,
@@ -55,7 +61,8 @@ module.exports = function() {
         image: "daphne",
         category: "shrub",
         price: 29.95,
-        description: "this is just a placeholder descripion for each product"
+        description: "this is just a placeholder descripion for each product",
+        inCart: false
       },
       {
         id: 8,
@@ -63,7 +70,8 @@ module.exports = function() {
         image: "lantana",
         category: "annual",
         price: 23,
-        description: "this is just a placeholder descripion for each product"
+        description: "this is just a placeholder descripion for each product",
+        inCart: false
       },
       {
         id: 9,
@@ -71,7 +79,8 @@ module.exports = function() {
         image: "marigold",
         category: "annual",
         price: 12,
-        description: "this is just a placeholder descripion for each product"
+        description: "this is just a placeholder descripion for each product",
+        inCart: false
       },
       {
         id: 10,
@@ -79,7 +88,8 @@ module.exports = function() {
         image: "sage",
         category: "annual",
         price: 15,
-        description: "this is just a placeholder descripion for each product"
+        description: "this is just a placeholder descripion for each product",
+        inCart: false
       },
       {
         id: 11,
@@ -87,7 +97,8 @@ module.exports = function() {
         image: "petunia",
         category: "annual",
         price: 17,
-        description: "this is just a placeholder descripion for each product"
+        description: "this is just a placeholder descripion for each product",
+        inCart: false
       },
       {
         id: 12,
@@ -95,7 +106,8 @@ module.exports = function() {
         image: "snapdragon",
         category: "annual",
         price: 23,
-        description: "this is just a placeholder descripion for each product"
+        description: "this is just a placeholder descripion for each product",
+        inCart: false
       },
       {
         id: 13,
@@ -103,7 +115,8 @@ module.exports = function() {
         image: "periwinkle",
         category: "annual",
         price: 5,
-        description: "this is just a placeholder descripion for each product"
+        description: "this is just a placeholder descripion for each product",
+        inCart: false
       },
       {
         id: 14,
@@ -111,7 +124,8 @@ module.exports = function() {
         image: "zinnia",
         category: "annual",
         price: 12,
-        description: "this is just a placeholder descripion for each product"
+        description: "this is just a placeholder descripion for each product",
+        inCart: false
       },
       {
         id: 15,
@@ -119,7 +133,8 @@ module.exports = function() {
         image: "gardenphlox",
         category: "perrenial",
         price: 19,
-        description: "this is just a placeholder descripion for each product"
+        description: "this is just a placeholder descripion for each product",
+        inCart: false
       },
       {
         id: 16,
@@ -127,7 +142,8 @@ module.exports = function() {
         image: "datepalm",
         category: "palm",
         price: 45,
-        description: "this is just a placeholder descripion for each product"
+        description: "this is just a placeholder descripion for each product",
+        inCart: false
       },
       {
         id: 17,
@@ -135,7 +151,8 @@ module.exports = function() {
         image: "queenpalm",
         category: "palm",
         price: 45,
-        description: "this is just a placeholder descripion for each product"
+        description: "this is just a placeholder descripion for each product",
+        inCart: false
       },
       {
         id: 18,
@@ -143,7 +160,8 @@ module.exports = function() {
         image: "arecapalm",
         category: "palm",
         price: 45,
-        description: "this is just a placeholder descripion for each product"
+        description: "this is just a placeholder descripion for each product",
+        inCart: false
       },
       {
         id: 19,
@@ -151,7 +169,8 @@ module.exports = function() {
         image: "sabalpalm",
         category: "palm",
         price: 45,
-        description: "this is just a placeholder descripion for each product"
+        description: "this is just a placeholder descripion for each product",
+        inCart: false
       },
       {
         id: 20,
@@ -159,7 +178,8 @@ module.exports = function() {
         image: "majesticpalm",
         category: "palm",
         price: 45,
-        description: "this is just a placeholder descripion for each product"
+        description: "this is just a placeholder descripion for each product",
+        inCart: false
       },
       {
         id: 21,
@@ -167,7 +187,8 @@ module.exports = function() {
         image: "bismarckpalm",
         category: "palm",
         price: 45,
-        description: "this is just a placeholder descripion for each product"
+        description: "this is just a placeholder descripion for each product",
+        inCart: false
       }
     ]
   };

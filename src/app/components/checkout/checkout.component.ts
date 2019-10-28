@@ -42,4 +42,20 @@ export class CheckoutComponent implements OnInit {
     localStorage.removeItem(`${e}`);
     this.ngOnInit();
   };
+
+  getCheckoutTotal = (): string => {
+    let items = { ...localStorage };
+    let arr = [];
+    let total = 0;
+    for (const key in items) {
+      if (items.hasOwnProperty(key)) {
+        const element = items[key];
+        arr.push(JSON.parse(element));
+      }
+    }
+    arr.forEach(prod => {
+      total += Number(prod.price);
+    });
+    return `$${total}`;
+  };
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Product } from "../../models/product.model";
+import { ProductRepository } from "../../models/product.repository";
 
 @Component({
   selector: "app-home",
@@ -10,7 +11,7 @@ export class HomeComponent implements OnInit {
   cartProducts: Product[];
   cartProdsPerPage = localStorage.length;
 
-  constructor() {}
+  constructor(private repo: ProductRepository) {}
 
   ngOnInit() {
     let items = { ...localStorage };
@@ -37,9 +38,24 @@ export class HomeComponent implements OnInit {
     console.log(newSize);
   };
 
+  openCart = () => {
+    let items = { ...localStorage };
+    let arr = [];
+    for (const key in items) {
+      if (items.hasOwnProperty(key)) {
+        const element = items[key];
+        arr.push(JSON.parse(element));
+      }
+    }
+    this.cartProducts = arr;
+  };
+
   removeCartItem = (e: number) => {
     console.log(e);
     localStorage.removeItem(`${e}`);
+    this.repo.getProducts().forEach(prod => {
+      if (e == prod.id) prod.inCart = false;
+    });
     this.ngOnInit();
   };
 }

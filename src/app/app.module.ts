@@ -10,6 +10,8 @@ import { UserNavComponent } from "./components/user-nav/user-nav.component";
 import { RestService } from "./services/rest.service";
 import { HttpClientModule } from "@angular/common/http";
 import { ProductRepository } from "./models/product.repository";
+import { AuthComponent } from "./components/auth/auth.component";
+import { CreateComponent } from './components/create/create.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ProductRepository } from "./models/product.repository";
     CheckoutComponent,
     HomeComponent,
     ProductsComponent,
-    UserNavComponent
+    UserNavComponent,
+    AuthComponent,
+    CreateComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [RestService, ProductRepository],

@@ -21,7 +21,7 @@ export class AuthComponent implements OnInit {
         .subscribe(response => {
           if (response) {
             console.log(response);
-            this.router.navigateByUrl("/create");
+            this.router.navigateByUrl("admin/editor");
           }
           console.log("didnt work " + response);
         });

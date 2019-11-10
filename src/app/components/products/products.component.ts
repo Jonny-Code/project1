@@ -12,6 +12,7 @@ export class ProductsComponent {
   selectedCategory = null;
   productsPerPage = 3;
   cartProdsPerPage = localStorage.length;
+  productsLength: number;
   constructor(private repo: ProductRepository) {}
 
   ngOnInit() {
@@ -29,11 +30,11 @@ export class ProductsComponent {
   }
 
   get products(): Product[] {
+    this.productsLength = this.repo.getProducts().length;
     return this.repo
       .getProducts(this.selectedCategory)
       .slice(0, this.productsPerPage);
   }
-
   get categories(): string[] {
     return this.repo.getCategories();
   }

@@ -11,7 +11,7 @@ import { RestService } from "./services/rest.service";
 import { HttpClientModule } from "@angular/common/http";
 import { ProductRepository } from "./models/product.repository";
 import { AuthComponent } from "./components/auth/auth.component";
-import { CreateComponent } from './components/create/create.component';
+import { EditorComponent } from "./components/editor/editor.component";
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { CreateComponent } from './components/create/create.component';
     ProductsComponent,
     UserNavComponent,
     AuthComponent,
-    CreateComponent
+    EditorComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [RestService, ProductRepository],

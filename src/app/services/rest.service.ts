@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
+import { Product } from "../models/product.model";
 
 @Injectable({
   providedIn: "root"
@@ -27,4 +28,28 @@ export class RestService {
         })
       );
   };
+
+  saveProduct(product: Product): Observable<Product> {
+    return this.http.post<Product>(
+      "http://localhost:3500/products/",
+      product,
+      this.getOptions()
+    );
+  }
+
+  updateProduct(product): Observable<Product> {
+    return this.http.put<Product>(
+      `http://localhost:3500/products/${product.id}`,
+      product,
+      this.getOptions()
+    );
+  }
+
+  private getOptions() {
+    return {
+      headers: new HttpHeaders({
+        Authorization: `Bearer<${this.auth_token}>`
+      })
+    };
+  }
 }

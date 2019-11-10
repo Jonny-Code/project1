@@ -1,0 +1,165 @@
+<button (click)="logout()">logout</button>
+
+<button
+  type="button"
+  class="btn btn-light border rounded pt-1 pb-1 pr-4 pl-4 mt-2"
+  data-toggle="modal"
+  data-target=".bd-example-modal-xl"
+>
+  <strong>Create</strong>
+</button>
+
+<div
+  class="modal fade bd-example-modal-xl"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myExtraLargeModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content ml-2 mr-2">
+      <div class="container bg-secondary">
+        <form novalidate #form="ngForm" (ngSubmit)="submit(form)">
+          <div class="form-group d-flex justify-content-center">
+            <input
+              class="form-control-lg"
+              placeholder="Name"
+              name="name"
+              [(ngModel)]="name"
+              required
+            />
+          </div>
+          <div class="form-group d-flex justify-content-center">
+            <input
+              class="form-control-lg"
+              placeholder="Category"
+              type="category"
+              name="category"
+              [(ngModel)]="category"
+              required
+            />
+          </div>
+          <div class="form-group d-flex justify-content-center">
+            <input
+              class="form-control-lg"
+              placeholder="Description"
+              type="description"
+              name="description"
+              [(ngModel)]="description"
+              required
+            />
+          </div>
+          <div class="form-group d-flex justify-content-center">
+            <input
+              class="form-control-lg"
+              placeholder="Price"
+              type="price"
+              name="price"
+              [(ngModel)]="price"
+              required
+            />
+          </div>
+          <div class="text-center">
+            <button class="btn btn-primary m-1" type="submit">submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container bg-primary">
+  <div class="row pt-2">
+    <div
+      class="col p-2 m-2 text-center d-flex justify-content-center"
+      *ngFor="let item of products"
+    >
+      <div
+        class="card shadow-lg bg-dark"
+        style="max-width: 12rem; max-height: 15rem;"
+      >
+        <div class="card-body pl-2 pr-2">
+          <h5 class="card-title text-white">{{ item.name }}</h5>
+          <h4 class="text-success mt-1 pt-1 pb-1 text-dark">
+            <span class="text-success"
+              ><small class="text-white">Price:&nbsp;&nbsp;</small> ${{
+                item.price
+              }}</span
+            >
+          </h4>
+        </div>
+
+        <button
+          type="button"
+          class="btn btn-light border rounded pt-1 pb-1 pr-4 pl-4 mt-2"
+          data-toggle="modal"
+          data-target=".bd-edit-modal-xl"
+          (click)="productID(item.id)"
+        >
+          <strong>Edit</strong>
+        </button>
+
+        <div
+          class="modal fade bd-edit-modal-xl"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="myExtraLargeModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content ml-2 mr-2">
+              <div class="container bg-secondary">
+                <form novalidate #form="ngForm" (ngSubmit)="submitUpdate(form)">
+                  <div class="form-group d-flex justify-content-center">
+                    <input
+                      class="form-control-lg"
+                      placeholder="Name"
+                      name="name"
+                      [(ngModel)]="name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group d-flex justify-content-center">
+                    <input
+                      class="form-control-lg"
+                      placeholder="Category"
+                      type="category"
+                      name="category"
+                      [(ngModel)]="category"
+                      required
+                    />
+                  </div>
+                  <div class="form-group d-flex justify-content-center">
+                    <input
+                      class="form-control-lg"
+                      placeholder="Description"
+                      type="description"
+                      name="description"
+                      [(ngModel)]="description"
+                      required
+                    />
+                  </div>
+                  <div class="form-group d-flex justify-content-center">
+                    <input
+                      class="form-control-lg"
+                      placeholder="Price"
+                      type="price"
+                      name="price"
+                      [(ngModel)]="price"
+                      required
+                    />
+                  </div>
+                  <div class="text-center">
+                    <button class="btn btn-primary m-1" type="submit">
+                      Submit
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

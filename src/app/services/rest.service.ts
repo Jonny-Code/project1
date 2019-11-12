@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { Product } from "../models/product.model";
+import { Order } from "../models/order.model";
 
 @Injectable({
   providedIn: "root"
@@ -11,6 +12,13 @@ export class RestService {
   auth_token: string;
 
   constructor(private http: HttpClient) {}
+
+  getOrders(): Observable<Order[]> {
+    return this.http.get<Order[]>(
+      "http://localhost:3500/orders/",
+      this.getOptions()
+    );
+  }
 
   getProducts = (): Observable<Object> => {
     let headers = new HttpHeaders();

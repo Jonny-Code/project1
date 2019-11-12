@@ -190,7 +190,8 @@ module.exports = function() {
         description: "this is just a placeholder descripion for each product",
         inCart: false
       }
-    ]
+    ],
+    orders: []
   };
   return data;
 };

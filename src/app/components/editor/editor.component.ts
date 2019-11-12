@@ -4,6 +4,8 @@ import { ProductRepository } from "../../models/product.repository";
 import { Product } from "../../models/product.model";
 import { AuthService } from "src/app/services/auth.service";
 import { Router } from "@angular/router";
+import { Order } from "src/app/models/order.model";
+import { OrderRepository } from "src/app/models/order.repository";
 
 declare var $: any;
 
@@ -20,11 +22,13 @@ export class EditorComponent implements OnInit {
   description: string;
   price: number;
   selectedID: number;
+  includeShipped = false;
 
   constructor(
     private auth: AuthService,
     private router: Router,
-    private repo: ProductRepository
+    private repo: ProductRepository,
+    private order: OrderRepository
   ) {}
 
   ngOnInit() {
@@ -37,6 +41,8 @@ export class EditorComponent implements OnInit {
       }
     }
     this.cartProducts = arr;
+
+    this.getOrders();
   }
 
   get cart(): Product[] {
@@ -45,6 +51,15 @@ export class EditorComponent implements OnInit {
 
   get products(): Product[] {
     return this.repo.getProducts(null);
+  }
+
+  getOrders(): Order[] {
+    console.log(
+      this.order.getOrders().filter(o => this.includeShipped || !o.shipped)
+    );
+    return this.order
+      .getOrders()
+      .filter(o => this.includeShipped || !o.shipped);
   }
 
   submit(form: NgForm) {

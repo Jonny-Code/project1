@@ -12,6 +12,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { ProductRepository } from "./models/product.repository";
 import { AuthComponent } from "./components/auth/auth.component";
 import { EditorComponent } from "./components/editor/editor.component";
+import { OrderRepository } from "./models/order.repository";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { EditorComponent } from "./components/editor/editor.component";
     EditorComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
-  providers: [RestService, ProductRepository],
+  providers: [RestService, ProductRepository, OrderRepository],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

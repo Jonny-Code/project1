@@ -23,6 +23,8 @@ export class EditorComponent implements OnInit {
   price: number;
   selectedID: number;
   includeShipped = false;
+  isShowingProducts = false;
+  isShowingOrders = false;
 
   constructor(
     private auth: AuthService,
@@ -51,6 +53,10 @@ export class EditorComponent implements OnInit {
 
   get products(): Product[] {
     return this.repo.getProducts(null);
+  }
+
+  hideProducts = () => {
+    console.log("works")
   }
 
   getOrders(): Order[] {

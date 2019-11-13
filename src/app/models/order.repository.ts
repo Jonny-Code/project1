@@ -23,9 +23,9 @@ export class OrderRepository {
     return this.orders;
   }
 
-  // saveOrder(order: Order): Observable<Order> {
-  //     return this.rest.saveOrder(order);
-  // }
+  saveOrder(order: Order): Observable<Order> {
+    return this.rest.saveOrder(order);
+  }
 
   // updateOrder(order: Order) {
   //     this.rest.updateOrder(order).subscribe(order => {

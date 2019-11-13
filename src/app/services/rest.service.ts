@@ -20,6 +20,10 @@ export class RestService {
     );
   }
 
+  saveOrder(order: Order): Observable<Order> {
+    return this.http.post<Order>("http://localhost:3500/orders/", order);
+  }
+
   getProducts = (): Observable<Object> => {
     let headers = new HttpHeaders();
     headers.append("Content-Type", "application/json");

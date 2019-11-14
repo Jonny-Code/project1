@@ -56,16 +56,16 @@ export class EditorComponent implements OnInit {
   }
 
   hideProducts = () => {
-    console.log("works")
+    console.log("works");
+  };
+
+  delete(id: number) {
+    this.order.deleteOrder(id);
   }
 
   getOrders(): Order[] {
-    console.log(
-      this.order.getOrders().filter(o => this.includeShipped || !o.shipped)
-    );
-    return this.order
-      .getOrders()
-      .filter(o => this.includeShipped || !o.shipped);
+    console.log(this.order.getOrders());
+    return this.order.getOrders();
   }
 
   submit(form: NgForm) {
@@ -79,7 +79,6 @@ export class EditorComponent implements OnInit {
         this.price,
         false
       );
-      console.log(prod);
       this.repo.saveProduct(prod);
     }
   }

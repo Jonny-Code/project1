@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { Observable, Subscription } from "rxjs";
 import { map } from "rxjs/operators";
 import { Product } from "../models/product.model";
 import { Order } from "../models/order.model";
@@ -22,6 +22,22 @@ export class RestService {
 
   saveOrder(order: Order): Observable<Order> {
     return this.http.post<Order>("http://localhost:3500/orders/", order);
+  }
+
+  deleteOrder(id: number): Subscription {
+    return this.http
+      .delete("http://localhost:3500/orders/" + id, this.getOptions())
+      .subscribe(
+        val => {
+          console.log("DELETE call successful value returned in body", val);
+        },
+        response => {
+          console.log("DELETE call in error", response);
+        },
+        () => {
+          console.log("The DELETE observable is now completed.");
+        }
+      );
   }
 
   getProducts = (): Observable<Object> => {

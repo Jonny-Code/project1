@@ -127,14 +127,17 @@
 <div class="container bg-dark mt-2">
   <div class="row">
     <div class="col d-flex justify-content-center m-2">
-        <h1 class="text-center text-white">Products</h1>
+      <h1 class="text-center text-white">Products</h1>
     </div>
 
     <div class="col d-flex justify-content-center m-2">
-        <div class="btn btn-light" (click)="isShowingProducts = !isShowingProducts">
-          <strong *ngIf="!isShowingProducts">Show Products</strong>
-          <strong *ngIf="isShowingProducts">Hide Products</strong>
-        </div>
+      <div
+        class="btn btn-light"
+        (click)="isShowingProducts = !isShowingProducts"
+      >
+        <strong *ngIf="!isShowingProducts">Show Products</strong>
+        <strong *ngIf="isShowingProducts">Hide Products</strong>
+      </div>
     </div>
   </div>
 
@@ -229,87 +232,48 @@
   </div>
 </div>
 
-
-<div class="container d-flex justify-content-center">
-    <button
-      type="button"
-      class="btn btn-lg btn-light border rounded pt-1 pb-1 pr-4 pl-4 mt-2"
-      data-toggle="modal"
-      data-target=".bd-order-modal"
-    >
-      <strong>Create Order</strong>
-    </button>
-    <div
-      class="modal fade bd-order-modal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="myExtraLargeModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content ml-2 mr-2">
-          <div class="container bg-secondary pt-3">
-            <form novalidate #form="ngForm" (ngSubmit)="submit(form)">
-              <div class="form-group d-flex justify-content-center">
-                <input
-                  class="form-control-lg"
-                  placeholder="Name"
-                  name="name"
-                  [(ngModel)]="name"
-                  required
-                />
-              </div>
-              <div class="form-group d-flex justify-content-center">
-                <input
-                  class="form-control-lg"
-                  placeholder="Category"
-                  type="category"
-                  name="category"
-                  [(ngModel)]="category"
-                  required
-                />
-              </div>
-              <div class="form-group d-flex justify-content-center">
-                <input
-                  class="form-control-lg"
-                  placeholder="Description"
-                  type="description"
-                  name="description"
-                  [(ngModel)]="description"
-                  required
-                />
-              </div>
-              <div class="form-group d-flex justify-content-center">
-                <input
-                  class="form-control-lg"
-                  placeholder="Price"
-                  type="price"
-                  name="price"
-                  [(ngModel)]="price"
-                  required
-                />
-              </div>
-              <div class="text-center">
-                <button class="btn btn-primary m-1" type="submit">Submit</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container d-flex justify-content-center"></div>
 
 <div class="container bg-dark mt-2">
   <div class="row">
     <div class="col d-flex justify-content-center m-2">
-        <h1 class="text-center text-white">Orders</h1>
+      <h1 class="text-center text-white">Orders</h1>
     </div>
     <div class="col d-flex justify-content-center m-2">
-        <div class="btn btn-light" (click)="isShowingOrders = !isShowingOrders">
-            <strong *ngIf="!isShowingOrders">Show Orders</strong>
-            <strong *ngIf="isShowingOrders">Hide Orders</strong>
-          </div>
+      <div class="btn btn-light" (click)="isShowingOrders = !isShowingOrders">
+        <strong *ngIf="!isShowingOrders">Show Orders</strong>
+        <strong *ngIf="isShowingOrders">Hide Orders</strong>
+      </div>
     </div>
   </div>
 
+  <div class="row pt-2" *ngIf="isShowingOrders">
+    <div
+      class="col p-2 m-2 text-center d-flex justify-content-center"
+      *ngFor="let item of getOrders()"
+    >
+      <div class="card shadow-lg bg-primary">
+        <div class="card-body pl-2 pr-2">
+          <h6 class="card-title text-white">Order Name</h6>
+          <h6 class="card-title text-success">{{ item.name }}</h6>
+          <h6 class="text-info">{{ item.address }}</h6>
+        </div>
+        <h6 class="text-white">Order Products</h6>
+        <ul class="list-group pt-2">
+          <li
+            class="list-group-item p-2 m-2"
+            *ngFor="let prod of item.products"
+          >
+            <h6>{{ prod.name }}</h6>
+          </li>
+        </ul>
+        <div class="btn btn-sm btn-light" (click)="item.shipped = true">
+          Ship Order
+        </div>
+        <div class="btn btn-sm btn-danger" (click)="delete(item.id)">
+          Delete
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -3,13 +3,14 @@ import { Observable } from "rxjs";
 import { Order } from "./order.model";
 //import { StaticDataSource } from "./static.datasource";
 import { RestService } from "../services/rest.service";
+import { HttpClient } from "@angular/common/http";
 
 @Injectable()
 export class OrderRepository {
   private orders: Order[] = [];
   private loaded: boolean = false;
 
-  constructor(private rest: RestService) {}
+  constructor(private rest: RestService, private http: HttpClient) {}
 
   loadOrders() {
     this.loaded = true;
@@ -34,9 +35,7 @@ export class OrderRepository {
   //     });
   // }
 
-  // deleteOrder(id: number) {
-  //     this.rest.deleteOrder(id).subscribe(order => {
-  //         this.orders.splice(this.orders.findIndex(o => id == o.id));
-  //     });
-  // }
+  deleteOrder(id: number) {
+    this.rest.deleteOrder(id);
+  }
 }

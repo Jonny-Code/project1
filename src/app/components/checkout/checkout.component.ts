@@ -86,7 +86,7 @@ export class CheckoutComponent implements OnInit {
       }
 
       let o = new Order(
-        this.order.getOrders().length + 1,
+        Math.floor(Math.random() * 100),
         `${this.firstname} ${this.lastname}`,
         this.address,
         this.city,

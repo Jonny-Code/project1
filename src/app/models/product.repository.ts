@@ -31,6 +31,10 @@ export class ProductRepository implements OnInit {
     }
   }
 
+  deleteProduct(id: number) {
+    this.rest.deleteProduct(id);
+  }
+
   updateProduct(product: Product) {
     this.rest.updateProduct(product).subscribe(p => {
       this.products.splice(

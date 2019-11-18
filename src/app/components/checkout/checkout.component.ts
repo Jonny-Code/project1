@@ -50,11 +50,9 @@ export class CheckoutComponent implements OnInit {
 
   changeCartSize = (newSize: number) => {
     this.cartProdsPerPage = newSize;
-    console.log(newSize);
   };
 
   removeCartItem = (e: number) => {
-    console.log(e);
     localStorage.removeItem(`${e}`);
     this.repo.getProducts().forEach(prod => {
       if (e == prod.id) prod.inCart = false;
@@ -96,7 +94,6 @@ export class CheckoutComponent implements OnInit {
         false,
         arr
       );
-      console.log(o);
       this.order.saveOrder(o).subscribe(order => {
         localStorage.clear();
       });

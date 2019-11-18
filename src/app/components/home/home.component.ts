@@ -35,7 +35,6 @@ export class HomeComponent implements OnInit {
 
   changeCartSize = (newSize: number) => {
     this.cartProdsPerPage = newSize;
-    console.log(newSize);
   };
 
   openCart = () => {
@@ -51,7 +50,6 @@ export class HomeComponent implements OnInit {
   };
 
   removeCartItem = (e: number) => {
-    console.log(e);
     localStorage.removeItem(`${e}`);
     this.repo.getProducts().forEach(prod => {
       if (e == prod.id) prod.inCart = false;

@@ -25,13 +25,15 @@ export class EditorComponent implements OnInit {
   includeShipped = false;
   isShowingProducts = false;
   isShowingOrders = false;
+  deletedID: number = null;
 
   constructor(
     private auth: AuthService,
     private router: Router,
-    private repo: ProductRepository,
+    private product: ProductRepository,
     private order: OrderRepository
   ) {}
+
 
   ngOnInit() {
     let items = { ...localStorage };
@@ -52,19 +54,19 @@ export class EditorComponent implements OnInit {
   }
 
   get products(): Product[] {
-    return this.repo.getProducts(null);
+    return this.product.getProducts(null).filter(i => i.id != this.deletedID);
   }
 
-  hideProducts = () => {
-    console.log("works");
-  };
-
-  delete(id: number) {
+  deleteOrder(id: number) {
     this.order.deleteOrder(id);
   }
 
+  deleteProduct(id: number) {
+    this.product.deleteProduct(id);
+    this.deletedID = id;
+  }
+
   getOrders(): Order[] {
-    console.log(this.order.getOrders());
     return this.order.getOrders();
   }
 
@@ -79,7 +81,7 @@ export class EditorComponent implements OnInit {
         this.price,
         false
       );
-      this.repo.saveProduct(prod);
+      this.product.saveProduct(prod);
     }
   }
 
@@ -94,14 +96,13 @@ export class EditorComponent implements OnInit {
         this.price,
         false
       );
-      this.repo.updateProduct(prod);
+      this.product.updateProduct(prod);
       $(".bd-edit-modal-xl").modal("hide");
     }
   }
 
   productID(id: number) {
     this.selectedID = id;
-    console.log(this.selectedID);
   }
 
   logout() {

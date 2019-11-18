@@ -27,17 +27,12 @@ export class RestService {
   deleteOrder(id: number): Subscription {
     return this.http
       .delete("http://localhost:3500/orders/" + id, this.getOptions())
-      .subscribe(
-        val => {
-          console.log("DELETE call successful value returned in body", val);
-        },
-        response => {
-          console.log("DELETE call in error", response);
-        },
-        () => {
-          console.log("The DELETE observable is now completed.");
-        }
-      );
+      .subscribe();
+  }
+
+  deleteProduct(id: number): Subscription {
+    return this.http.delete("http://localhost:3500/products/" + id, this.getOptions())
+      .subscribe();
   }
 
   getProducts = (): Observable<Object> => {

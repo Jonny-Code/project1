@@ -6,7 +6,6 @@ import { AppComponent } from "./app.component";
 import { CheckoutComponent } from "./components/checkout/checkout.component";
 import { HomeComponent } from "./components/home/home.component";
 import { ProductsComponent } from "./components/products/products.component";
-import { UserNavComponent } from "./components/user-nav/user-nav.component";
 import { RestService } from "./services/rest.service";
 import { HttpClientModule } from "@angular/common/http";
 import { ProductRepository } from "./models/product.repository";
@@ -20,7 +19,6 @@ import { OrderRepository } from "./models/order.repository";
     CheckoutComponent,
     HomeComponent,
     ProductsComponent,
-    UserNavComponent,
     AuthComponent,
     EditorComponent
   ],

@@ -24,7 +24,6 @@ export class ProductsComponent {
         arr.push(JSON.parse(element));
       }
     }
-    console.log(arr);
     this.cartProducts = arr;
     this.cartProdsPerPage = arr.length;
   }
@@ -81,7 +80,6 @@ export class ProductsComponent {
     this.cartProducts = arr;
   };
   removeCartItem = (e: number) => {
-    console.log(e);
     localStorage.removeItem(`${e}`);
     this.products.forEach(prod => {
       if (e == prod.id) prod.inCart = false;

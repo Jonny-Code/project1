@@ -20,10 +20,8 @@ export class AuthComponent implements OnInit {
         .authenticate(this.username, this.password)
         .subscribe(response => {
           if (response) {
-            console.log(response);
             this.router.navigateByUrl("admin/editor");
           }
-          console.log("didnt work " + response);
         });
     }
   }

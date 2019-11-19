@@ -6,6 +6,7 @@ export class Product {
     public img?: string,
     public category?: string,
     public price?: number,
-    public inCart?: boolean
+    public inCart?: boolean,
+    public isDeleted: boolean = false
   ) {}
 }

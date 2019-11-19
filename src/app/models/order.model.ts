@@ -11,7 +11,8 @@ export class Order {
     public zip: string,
     public country: string,
     public shipped: boolean = false,
-    public products: Object[]
+    public products: Object[],
+    public isDeleted: boolean = false
   ) {}
 
   clear() {
@@ -19,6 +20,7 @@ export class Order {
     this.name = this.address = this.city = null;
     this.state = this.zip = this.country = null;
     this.shipped = false;
+    this.isDeleted = false;
     localStorage.clear();
   }
 }

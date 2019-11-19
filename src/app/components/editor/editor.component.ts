@@ -25,7 +25,6 @@ export class EditorComponent implements OnInit {
   includeShipped = false;
   isShowingProducts = false;
   isShowingOrders = false;
-  deletedID: number = null;
 
   constructor(
     private auth: AuthService,
@@ -33,7 +32,6 @@ export class EditorComponent implements OnInit {
     private product: ProductRepository,
     private order: OrderRepository
   ) {}
-
 
   ngOnInit() {
     let items = { ...localStorage };
@@ -54,20 +52,21 @@ export class EditorComponent implements OnInit {
   }
 
   get products(): Product[] {
-    return this.product.getProducts(null).filter(i => i.id != this.deletedID);
+    return this.product.getProducts(null).filter(i => !i.isDeleted);
   }
 
-  deleteOrder(id: number) {
-    this.order.deleteOrder(id);
+  deleteOrder(ord: Order) {
+    this.order.deleteOrder(ord.id);
+    ord.isDeleted = true;
   }
 
-  deleteProduct(id: number) {
-    this.product.deleteProduct(id);
-    this.deletedID = id;
+  deleteProduct(prod: Product) {
+    this.product.deleteProduct(prod.id);
+    prod.isDeleted = true;
   }
 
   getOrders(): Order[] {
-    return this.order.getOrders();
+    return this.order.getOrders().filter(i => !i.isDeleted);
   }
 
   submit(form: NgForm) {
@@ -79,6 +78,7 @@ export class EditorComponent implements OnInit {
         "none",
         this.category,
         this.price,
+        false,
         false
       );
       this.product.saveProduct(prod);
@@ -94,6 +94,7 @@ export class EditorComponent implements OnInit {
         "none",
         this.category,
         this.price,
+        false,
         false
       );
       this.product.updateProduct(prod);

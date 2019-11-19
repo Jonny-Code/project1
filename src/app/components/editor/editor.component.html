@@ -227,9 +227,9 @@
             </div>
           </div>
         </div>
-        <div class="btn btn-sm btn-danger m-2" (click)="deleteProduct(item.id)">
+        <button class="btn btn-sm btn-danger m-2" (click)="deleteProduct(item)">
           <strong>Delete</strong>
-        </div>
+        </button>
       </div>
     </div>
   </div>
@@ -273,9 +273,9 @@
         <div class="btn btn-sm btn-light" (click)="item.shipped = true">
           Ship Order
         </div>
-        <div class="btn btn-sm btn-danger" (click)="deleteOrder(item.id)">
-          Delete
-        </div>
+        <button class="btn btn-sm btn-danger" (click)="deleteOrder(item)">
+          <strong>Delete</strong>
+        </button>
       </div>
     </div>
   </div>

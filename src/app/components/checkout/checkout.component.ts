@@ -73,7 +73,7 @@ export class CheckoutComponent implements OnInit {
   };
 
   submitOrderForm = (form: NgForm) => {
-    if (form.valid) {
+    if (form.valid && !Object.values(form.value).includes(undefined)) {
       let items = { ...localStorage };
       let arr = [];
       for (const key in items) {
@@ -97,8 +97,10 @@ export class CheckoutComponent implements OnInit {
       this.order.saveOrder(o).subscribe(order => {
         localStorage.clear();
       });
+
+      this.router.navigateByUrl("/products");
     }
-    this.router.navigateByUrl("/products");
+    this.openCart();
   };
 
   getCheckoutTotal = (): string => {

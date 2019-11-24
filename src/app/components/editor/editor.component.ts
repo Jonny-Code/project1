@@ -31,7 +31,7 @@ export class EditorComponent implements OnInit {
     private router: Router,
     private product: ProductRepository,
     private order: OrderRepository
-  ) {}
+  ) { }
 
   ngOnInit() {
     let items = { ...localStorage };
@@ -82,6 +82,7 @@ export class EditorComponent implements OnInit {
         false
       );
       this.product.saveProduct(prod);
+      $(".bd-example-modal-xl").modal("hide");
     }
   }
 

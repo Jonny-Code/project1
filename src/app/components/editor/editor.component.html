@@ -132,12 +132,10 @@
 
     <div class="col d-flex justify-content-center m-2">
       <div
-        class="btn btn-light"
+        class="btn btn-light font-weight-bold"
         (click)="isShowingProducts = !isShowingProducts"
-      >
-        <strong *ngIf="!isShowingProducts">Show Products</strong>
-        <strong *ngIf="isShowingProducts">Hide Products</strong>
-      </div>
+        [textContent]="isShowingProducts ? 'Hide Products' : 'Show Products'"
+      ></div>
     </div>
   </div>
 
@@ -243,10 +241,11 @@
       <h1 class="text-center text-white">Orders</h1>
     </div>
     <div class="col d-flex justify-content-center m-2">
-      <div class="btn btn-light" (click)="isShowingOrders = !isShowingOrders">
-        <strong *ngIf="!isShowingOrders">Show Orders</strong>
-        <strong *ngIf="isShowingOrders">Hide Orders</strong>
-      </div>
+      <div
+        class="btn btn-light font-weight-bold"
+        (click)="isShowingOrders = !isShowingOrders"
+        [textContent]="isShowingOrders ? 'Hide Orders' : 'Show Orders'"
+      ></div>
     </div>
   </div>
 
@@ -270,9 +269,11 @@
             <h6>{{ prod.name }}</h6>
           </li>
         </ul>
-        <div class="btn btn-sm btn-light" (click)="item.shipped = true">
-          Ship Order
-        </div>
+        <div
+          class="btn btn-sm btn-light"
+          (click)="shipOrder(item)"
+          [textContent]="item.shipped ? 'Order Shipped' : 'Ship Order'"
+        ></div>
         <button class="btn btn-sm btn-danger" (click)="deleteOrder(item)">
           <strong>Delete</strong>
         </button>

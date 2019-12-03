@@ -60,12 +60,20 @@ export class RestService {
     );
   }
 
-  updateProduct(product): Observable<Product> {
+  updateProduct(product: Product): Observable<Product> {
     return this.http.put<Product>(
       `http://localhost:3500/products/${product.id}`,
       product,
       this.getOptions()
     );
+  }
+
+  updateOrder(order: Order): Observable<Order> {
+    return this.http.put<Order>(
+      `http://localhost:3500/orders/${order.id}`,
+      order,
+      this.getOptions()
+    )
   }
 
   private getOptions() {

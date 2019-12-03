@@ -69,6 +69,12 @@ export class EditorComponent implements OnInit {
     return this.order.getOrders().filter(i => !i.isDeleted);
   }
 
+  shipOrder(order: Order) {
+    if (order.shipped) return;
+    order.shipped = true;
+    this.order.updateOrder(order);
+  }
+
   submit(form: NgForm) {
     if (form.valid) {
       let prod = new Product(

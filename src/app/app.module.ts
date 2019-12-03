@@ -12,6 +12,7 @@ import { ProductRepository } from "./models/product.repository";
 import { AuthComponent } from "./components/auth/auth.component";
 import { EditorComponent } from "./components/editor/editor.component";
 import { OrderRepository } from "./models/order.repository";
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { OrderRepository } from "./models/order.repository";
     HomeComponent,
     ProductsComponent,
     AuthComponent,
-    EditorComponent
+    EditorComponent,
+    RegisterComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [RestService, ProductRepository, OrderRepository],

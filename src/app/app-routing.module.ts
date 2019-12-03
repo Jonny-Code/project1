@@ -6,11 +6,13 @@ import { CheckoutComponent } from "./components/checkout/checkout.component";
 import { AuthComponent } from "./components/auth/auth.component";
 import { EditorComponent } from "./components/editor/editor.component";
 import { AuthGuard } from "./auth.guard";
+import { RegisterComponent } from "./components/register/register.component";
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "products", component: ProductsComponent },
   { path: "checkout", component: CheckoutComponent },
+  { path: "register", component: RegisterComponent },
   {
     path: "admin",
     children: [

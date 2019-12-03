@@ -1,0 +1,87 @@
+<div class="container mt-5 p-3 bg-dark">
+  <h1 class="text-white text-center">User Account Information</h1>
+  <div class="row">
+    <div class="col bg-primary m-2 p-2 d-flex justify-content-center">
+      <h3 class="text-white m-2">
+        <span class="badge badge-light">{{ name }}</span>
+      </h3>
+    </div>
+    <div class="col bg-primary m-2 p-2 d-flex justify-content-center">
+      <h3 class="text-white m-2">
+        <span class="badge badge-light">{{ company }}</span>
+      </h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col bg-primary m-2 p-2 d-flex justify-content-center">
+      <h3 class="text-white m-2">
+        <span class="badge badge-light">{{ email }}</span>
+      </h3>
+    </div>
+    <div class="col bg-primary m-2 p-2 d-flex justify-content-center">
+      <h3 class="text-white m-2">
+        <span class="badge badge-light">{{ location }}</span>
+      </h3>
+    </div>
+  </div>
+</div>
+<form novalidate #form="ngForm" (ngSubmit)="submit(form)">
+  <div class="container mt-5 p-3 bg-dark">
+    <h1 class="text-white text-center">Update Account Information</h1>
+
+    <div class="row">
+      <div class="col bg-primary m-2 p-2 d-flex justify-content-center">
+        <input
+          type="text"
+          class="form-control-lg rounded pl-1 pr-1 text-center"
+          id="inputName"
+          placeholder="Change name"
+          name="name"
+          [(ngModel)]="name"
+        />
+      </div>
+      <div class="col bg-primary m-2 p-2 d-flex justify-content-center">
+        <input
+          type="text"
+          class="form-control-lg rounded pl-1 pr-1 text-center"
+          id="inputCompany"
+          placeholder="Change company name"
+          name="company"
+          [(ngModel)]="company"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col bg-primary m-2 p-2 d-flex justify-content-center">
+        <input
+          type="text"
+          class="form-control-lg rounded pl-1 pr-1 text-center"
+          id="inputEmail"
+          placeholder="Change email"
+          name="email"
+          [(ngModel)]="email"
+        />
+      </div>
+      <div class="col bg-primary m-2 p-2 d-flex justify-content-center">
+        <input
+          type="text"
+          class="form-control-lg rounded pl-1 pr-1 text-center"
+          id="inputLocation"
+          placeholder="Change location"
+          name="location"
+          [(ngModel)]="location"
+        />
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col d-flex justify-content-center">
+        <button type="submit" class="btn btn-light font-weight-bold">
+          Update
+        </button>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <div class="btn btn-light font-weight-bold" routerLink="/">Go Back</div>
+      </div>
+    </div>
+  </div>
+</form>

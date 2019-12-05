@@ -15,8 +15,8 @@ export class RegisterComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    let item = { ...JSON.parse(sessionStorage.getItem("account")) }
-    console.log(item)
+    let item = { ...JSON.parse(sessionStorage.getItem("account")) };
+    console.log(item);
     this.name = item.name;
     this.company = item.company;
     this.email = item.email;
@@ -24,6 +24,7 @@ export class RegisterComponent implements OnInit {
   }
 
   submit(form: NgForm) {
-    (sessionStorage.length > 0) ? sessionStorage.clear() : sessionStorage.setItem("account", JSON.stringify(form.value));
+    if (sessionStorage.length > 0)
+      sessionStorage.setItem("account", JSON.stringify(form.value));
   }
 }

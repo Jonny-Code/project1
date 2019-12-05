@@ -54,11 +54,15 @@
           aria-haspopup="true"
           aria-expanded="false"
         >
-          <small><strong>customer@gmail.com</strong></small>
+          <small
+            ><strong
+              [textContent]="hasAccount ? email : 'customer@gmail.com'"
+            ></strong
+          ></small>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" routerLink="/admin/auth">Admin</a>
-          <a class="dropdown-item">Log out</a>
+          <a class="dropdown-item" routerLink="/register">User Account</a>
         </div>
       </div>
     </div>
@@ -68,7 +72,10 @@
   <div class="row mt-4">
     <div class="col pt-3 pb-3 pr-4 mr-3 bg-dark shadow-sm">
       <h4 class="ml-4 mt-1 text-light">
-        <span class="rounded pl-2 pr-2 pb-1 text-light">Customer Name</span>
+        <span
+          class="rounded pl-2 pr-2 pb-1 text-light"
+          [textContent]="hasAccount ? name : 'Customer Name'"
+        ></span>
       </h4>
       <span class="ml-4">
         <svg width="23" height="22">
@@ -80,7 +87,10 @@
             fill="#9E9E9E"
           />
         </svg>
-        <small class="heading ml-2 text-light">Company Name</small>
+        <small
+          class="heading ml-2 text-light"
+          [textContent]="hasAccount ? company : 'Company Name'"
+        ></small>
       </span>
 
       <span class="ml-4 mt-1" style="display:block">
@@ -93,7 +103,10 @@
             fill="#9E9E9E"
           />
         </svg>
-        <small class="heading ml-2 text-light">Location</small>
+        <small
+          class="heading ml-2 text-light"
+          [textContent]="hasAccount ? location : 'Location'"
+        ></small>
       </span>
     </div>
     <div class="col-3 pt-3 pb-2 wrapper bg-dark shadow-sm text-center">
@@ -223,12 +236,11 @@
     <div class="row">
       <div class="col mt-1 pt-3 pb-3 bg-white border shadow-sm">
         <h5 class="text-center text-dark">
-          <strong>Home Page</strong>
+          <strong>Wholesale Nursery Inc.</strong>
         </h5>
         <p class="pt-3 text-dark">
-          Vim hendrerit contentiones ex, no timeam euripidis mel, habemus
-          propriae volutpat sea an. Vel diceret contentiones ut, vel ipsum nobis
-          in. Sea in esse iusto, novum audire complectitur id vix.
+          Come see a variety of plants for sale at wholesale prices! Also make
+          sure to use register your account.
         </p>
       </div>
     </div>

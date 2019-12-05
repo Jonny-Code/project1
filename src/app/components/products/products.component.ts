@@ -13,6 +13,11 @@ export class ProductsComponent {
   productsPerPage = 3;
   cartProdsPerPage = localStorage.length;
   productsLength: number;
+  hasAccount: boolean;
+  name: string;
+  company: string;
+  location: string;
+  email: string;
   constructor(private repo: ProductRepository) {}
 
   ngOnInit() {
@@ -26,6 +31,14 @@ export class ProductsComponent {
     }
     this.cartProducts = arr;
     this.cartProdsPerPage = arr.length;
+
+    if (sessionStorage.length > 0) {
+      this.hasAccount = true;
+      this.name = JSON.parse(sessionStorage.getItem("account")).name;
+      this.company = JSON.parse(sessionStorage.getItem("account")).company;
+      this.location = JSON.parse(sessionStorage.getItem("account")).location;
+      this.email = JSON.parse(sessionStorage.getItem("account")).email;
+    } else this.hasAccount = false;
   }
 
   get products(): Product[] {

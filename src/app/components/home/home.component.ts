@@ -10,6 +10,11 @@ import { ProductRepository } from "../../models/product.repository";
 export class HomeComponent implements OnInit {
   cartProducts: Product[];
   cartProdsPerPage = localStorage.length;
+  name: string;
+  company: string;
+  location: string;
+  email: string;
+  hasAccount: boolean;
 
   constructor(private repo: ProductRepository) {}
 
@@ -23,6 +28,13 @@ export class HomeComponent implements OnInit {
       }
     }
     this.cartProducts = arr;
+    if (sessionStorage.length > 0) {
+      this.hasAccount = true;
+      this.name = JSON.parse(sessionStorage.getItem("account")).name;
+      this.company = JSON.parse(sessionStorage.getItem("account")).company;
+      this.location = JSON.parse(sessionStorage.getItem("account")).location;
+      this.email = JSON.parse(sessionStorage.getItem("account")).email;
+    } else this.hasAccount = false;
   }
 
   get cart(): Product[] {

@@ -21,6 +21,11 @@ export class CheckoutComponent implements OnInit {
   state: string;
   zip: string;
   country: string;
+  name: string;
+  company: string;
+  location: string;
+  email: string;
+  hasAccount: boolean;
 
   constructor(
     private repo: ProductRepository,
@@ -38,6 +43,13 @@ export class CheckoutComponent implements OnInit {
       }
     }
     this.cartProducts = arr;
+    if (sessionStorage.length > 0) {
+      this.hasAccount = true;
+      this.name = JSON.parse(sessionStorage.getItem("account")).name;
+      this.company = JSON.parse(sessionStorage.getItem("account")).company;
+      this.location = JSON.parse(sessionStorage.getItem("account")).location;
+      this.email = JSON.parse(sessionStorage.getItem("account")).email;
+    } else this.hasAccount = false;
   }
 
   get cart(): Product[] {

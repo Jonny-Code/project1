@@ -22,7 +22,7 @@
     "@angular/router": "~8.1.2",
     "bootstrap": "^4.3.1",
     "bootswatch": "^4.3.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "json-server": "^0.15.1",
     "jsonwebtoken": "^8.5.1",
     "popper.js": "^1.15.0",
